@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<title>Vis & Society Assignment 3</title>
-	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+    <link rel="stylesheet" href="style.css">
+	<script type='text/javascript' src='https://public.tableau.com/javascripts/api/tableau-2.8.0.min.js'></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 		</h1>
 
 		<p>
-			<strong>Your Name</strong> — <em>Your MIT Email Address</em>
+			<strong>Yeonhoo Cho</strong> — <em>choyh@mit.edu</em>
 		</p>
 	</header>
 
@@ -30,9 +31,13 @@
 			</p>
 
 			<ul>
-				<li>INSIGHT 1</li>
-				<li>INSIGHT 2</li>
-				<li>INSIGHT 3</li>
+				<li>The golden ratio spiral is visually striking and engaging, making it enjoyable to follow the timeline chronologically from the center outward.
+				</li>
+				<li>Significant surges in new COVID-19 cases appear in: October 2020 – January 2021, August 2021 – November 2021, and January 2022 onward.
+				</li>
+				<li>While these spikes are prominent, the overall absolute case numbers in late 2021 and 2022 remain significantly higher than in 2020, even at previous peaks.
+				</li>
+				<li>The graph ends in January 2022 with an ominous, sharp rise, signaling an unprecedented surge in cases.</li>
 			</ul>
 
 			<p>
@@ -40,9 +45,12 @@
 			</p>
 
 			<ul>
-				<li>CRITIQUE 1</li>
-				<li>CRITIQUE 2</li>
-				<li>CRITIQUE 3</li>
+				<li>The increasing radius of the spiral visually downplays the severity of peaks in late 2021 and 2022. A linear graph might better emphasize these surges.
+				</li>
+				<li>The legend does not fully account for cases exceeding 150K, despite thicker lines suggesting higher numbers.
+				</li>
+				<li>Additional context—such as death rates, cumulative case counts, or key events—could enhance interpretation and provide deeper insights into trend shifts.
+				</li>
 			</ul>
 		</section>
 
@@ -50,9 +58,9 @@
 			<h2>Visualization Sketches</h2>
 
       <figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/1.jpg" alt="" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+          Line graph with cumulative cases and 7-day average case count.
 				</figcaption>
 			</figure>
 
@@ -61,15 +69,21 @@
 			</p>
 
 			<ul>
-				<li>RATIONALE 1</li>
-				<li>RATIONALE 2</li>
-				<li>RATIONALE 3</li>
+				<li>I wanted to highlight the severity of COVID-19 cases in 2021 by making trends more comparable to 2020.
+				</li>
+				<li>As intended, this figure demonstrates that the situation in 2021 was far worse than it appears in the original circular graph.
+				</li>
+				<li>The linear format allows for a clearer comparison between years, making the steep rise in cases more apparent.
+				</li>
+				<li>Layering cumulative cases helps illustrate the rapid spread of COVID-19 in 2021, reinforcing the scale and speed of the outbreak.
+				</li>
+				<li>In my next sketch, I’d like to experiment with annotations or key event markers to further contextualize trend shifts.</li>
 			</ul>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/2.jpg" alt="" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+          Vertical timeline with cumulative cases and 7-day average case count.
 				</figcaption>
 			</figure>
 
@@ -78,15 +92,24 @@
 			</p>
 
 			<ul>
-				<li>RATIONALE 1</li>
-				<li>RATIONALE 2</li>
-				<li>RATIONALE 3</li>
+				<li>Similar to Figure 1, this graph layers the 7-day average case count with cumulative cases but restructures the layout for better contextualization.
+				</li>
+				<li>By presenting the timeline vertically, it creates more space for annotations that highlight key events influencing case trends, such as new variants, vaccine developments, policy changes, and travel restrictions.
+				</li>
+				<li>The vertical format enhances readability of key dates and their potential impact on case surges.
+				</li>
+				<li>Marking milestones when total cases reach each million emphasizes the acceleration of the pandemic.
+				</li>
+				<li>The alignment of annotations with case trends makes it easier to correlate policy actions and external factors with infection spikes.
+				</li>
+				<li>Next, I’d like to test different visual markers (e.g., color coding or symbols) to distinguish different types of events and their relative impact.
+				</li>
 			</ul>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/3.jpg" alt="" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+          Serpentine graph with 7-day average case count.
 				</figcaption>
 			</figure>
 
@@ -95,17 +118,42 @@
 			</p>
 
 			<ul>
-				<li>RATIONALE 1</li>
-				<li>RATIONALE 2</li>
-				<li>RATIONALE 3</li>
+				<li>This visualization merges the strengths of both linear and circular graphs to highlight the cyclical nature of COVID-19 surges while ensuring accurate comparison across years. It directly addresses the shortcomings of the original spiral graph, which visually downplayed the severity of cases in 2021 due to increasing radius.
+				</li>
+				<li>It emphasizes seasonal trends by maintaining a circular layout, making winter surges more apparent.
+				</li>
+				<li>Its consistent scaling across years prevents misinterpretation of case severity.
+				</li>
+				<li>The serpentine format maintains originality while retaining the cyclical pattern of COVID-19 waves.</li>
 			</ul>
 		</section>
 
 		<section>
 			<h2>Final Visualization Design</h2>
-      
+
+			<div id="tableauVizContainer" style="max-width: min(75vw, 80em);">
+
+			
+			<div id="tableauViz" style="max-width: 100%; height: 800px;"></div>
+
+			<script>
+				var containerDiv = document.getElementById("tableauViz");
+				var url = "https://public.tableau.com/shared/NCNS3ZHDG?:display_count=n&:origin=viz_share_link";
+				
+				var options = {
+					// width: 100%,
+					hideTabs: true,
+					onFirstInteractive: function () {
+						console.log("Tableau visualization is loaded.");
+					}
+				};
+				
+				var viz = new tableau.Viz(containerDiv, url, options);
+			</script>
+
+ <div class='tableauPlaceholder' id='viz1740428791119' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NC&#47;NCNS3ZHDG&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;NCNS3ZHDG' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NC&#47;NCNS3ZHDG&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1740428791119');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+			</div>
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
 				<figcaption>
           BRIEF CAPTION HERE.
 				</figcaption>
@@ -117,13 +165,17 @@
 			<h2>Design Process & Design Decisions</h2>
 
 			<p>
-        DESCRIBE YOUR DESIGN PROCESS AND DECISION DECISIONS HERE.
+			The visualization is designed to highlight the severity of COVID-19 case surges in 2021, while preserving the cyclical nature of pandemic waves. By juxtaposing a circular graph and a linear graph, my design effectively captures both the seasonality of surges and the absolute increase in case numbers. The circular graph maps time onto an angle to emphasize recurring winter spikes, while the linear graph provides a direct numerical comparison, ensuring that 2021’s case severity is not visually understated. A time period slider allows for dynamic interaction, helping users explore case trends over different periods. To provide context, key dates such as variant surges are annotated. Line thickness increases during peak periods, reinforcing the impact of surges, and the circular graph maintains a uniform radius per year to prevent the misrepresentation of 2021’s higher case counts. While this approach effectively communicates seasonality, severity, and context, it abstracts fine daily fluctuations and requires some interpretation, particularly for users unfamiliar with circular graphs. Despite these trade-offs, the combination of visual encodings—position, color, annotations, and interactivity—narrates the accelerating spread of COVID-19 in 2021 while preserving the cyclical nature of case surges.
+
       </p>
 
       <h3>Reflection</h3>
 
       <p>
-        WRITE YOUR FINAL REFLECTION HERE.
+		My final design attempts to address many of the critiques identified in Step 2, particularly in terms of preserving seasonality, accurately representing the severity of 2021 cases, and providing contextual explanations for case surges. By moving away from the golden spiral and instead using a circular graph with a fixed radius per year, I’ve mitigated the issue of visually downplaying the scale of 2021’s cases. The addition of a linked linear graph provides a clearer comparison between 2020 and 2021, ensuring that the dramatic rise in cases is more evident than in the original spiral design. Annotations and interactive tooltips enhance interpretability by connecting variant surges to fluctuations in case numbers.
+		</p><p>
+		However, the process of critique by redesign also revealed certain trade-offs and design tensions. While the circular graph effectively conveys seasonality, it inevitably abstracts some fine daily variations that a purely linear time-series graph would better display. Additionally, balancing the dual visualization approach—where both circular and linear graphs coexist—introduced challenges in ensuring the two remained clearly interpretable without overwhelming the user. The need to adjust scale and avoid data overlap further highlighted the difficulties of designing a visualization that is both aesthetically compelling and analytically precise. Ultimately, while the redesign significantly improves clarity and accuracy, it also underscores the inherent trade-offs in visualizing complex, time-dependent data—where emphasizing one aspect (e.g., seasonality) may come at the expense of another (e.g., granularity in daily trends).
+		
       </p>
 		</section>
 	</main>
